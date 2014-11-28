@@ -1,1 +1,2 @@
-flask/bin/pip install flask
+pip install flask
+pip install mime

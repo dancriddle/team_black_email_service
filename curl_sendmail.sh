@@ -1,1 +1,1 @@
-curl -i -X POST --data "name=Somenone&email=jplservice00@gmail.com&subject=SentFromCurl&body=cURLBody" https://team-black-email-service-dancriddle.c9.io/sendmail
+curl -i -X POST --data "name=Somenone&email=jplservice00@gmail.com&subject=Sent From Curl&body=<html><body><h1>Sent From Curl</h1></body></html>" https://team-black-email-service-dancriddle.c9.io/sendmail

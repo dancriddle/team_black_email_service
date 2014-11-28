@@ -1,4 +1,5 @@
 import smtplib
+from email.mime.text import MIMEText
 
 def send_mail_function(address, subject, message):
     
@@ -11,34 +12,26 @@ def send_mail_function(address, subject, message):
     password = "t3stjpl3tter"
     FROM = "jplservice00@gmail.com"
     
-    # Old parameters
-    #TO = ["jplservice00@gmail.com"] # must be a list
-    #SUBJECT = "Hello!"
-    #TEXT = "JPL restriction message."
-    
     # Read parameters into variables
-    TO = [address] # must be a list
+    TO = address
     SUBJECT = subject
     TEXT = message
     
     # Prepare actual message
-    message = """\
-From: %s
-To: %s
-Subject: %s
-
-%s
-""" % (FROM, ", ".join(TO), SUBJECT, TEXT)
+    message = MIMEText(TEXT, 'html')
+    message['From']=FROM
+    message['To']=TO
+    message['Subject']=SUBJECT
     
     #print "Printing message"
-    #print message
+    #print message.as_string()
     #print "EOM"
     
     # Send the mail
     server = smtplib.SMTP(SERVER)
     server.starttls() # from https://www.pythonanywhere.com/forums/topic/450/
     server.login(user,password) # from https://www.pythonanywhere.com/forums/topic/450/
-    server.sendmail(FROM, TO, message)
+    server.sendmail(FROM, TO, message.as_string())
     server.quit()
     
     print "End sendmail"
