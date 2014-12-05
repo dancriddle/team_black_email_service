@@ -1,6 +1,6 @@
 team_black_email_service
 ========================
-Email service.  This provides a pure web interface for sending emails.
+Email service.  This provides a pure web interface for sending emails.  Contains no business logic or message content/formatting.
 
 Dependencies
 ========================
