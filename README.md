@@ -8,6 +8,8 @@ Flask
 
 mime
 
+requests
+
 Resolve Python dependencies by running pip install -r requirements.txt
 
 Config File
